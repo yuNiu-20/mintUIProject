@@ -12,9 +12,10 @@ module.exports={
         rules:[
             {test:/\.css$/,use:['style-loader','css-loader']},
             {test:/\.(ttf|eot|woff|woff2|svg)$/,use:'url-loader'},
-            {test:/\.(jpg|png|gif|jpeg)$/,use:'url-loader'},
+            {test:/\.(jpg|png|gif|jpeg)$/,use:[{loader:'url-loader',options:{esModule: false}}]},
             {test:/\.js$/,use:'babel-loader',exclude:/node_modules/},
-            {test:/\.vue$/,use:'vue-loader'}
+            {test:/\.vue$/,use:'vue-loader'},
+            {test:/\.less$/,use:['style-loader','css-loader','less-loader']}
         ]
     },
     plugins:[

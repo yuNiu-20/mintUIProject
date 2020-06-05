@@ -1,6 +1,6 @@
 <template>
     <h1>
-        Login
+        cart
     </h1>
 </template>
 <script></script>
