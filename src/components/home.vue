@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="main">
 <!--        <div class="mui-slider" id="slider">-->
 <!--            <div class="mui-slider-group mui-slider-loop" >-->
 <!--                &lt;!&ndash; 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) &ndash;&gt;-->
@@ -53,29 +53,29 @@
 
         </mt-swipe>
         <ul class="mui-table-view mui-grid-view mui-grid-9">
-            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><router-link to="/home/newslist">
                 <img src="/src/images/menu1.png" >
-                <div class="mui-media-body">新闻资讯</div></a></li>
-            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+                <div class="mui-media-body">新闻资讯</div></router-link></li>
+            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><router-link to="/home/picContent">
                 <img src="/src/images/menu2.png" >
-                <div class="mui-media-body">图片分享</div></a></li>
-            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+                <div class="mui-media-body">图片分享</div></router-link></li>
+            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><router-link to="/home/product">
                 <img src="/src/images/menu3.png" >
-                <div class="mui-media-body">商品购买</div></a></li>
-            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+                <div class="mui-media-body">商品购买</div></router-link></li>
+            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><router-link to="/home/message">
                 <img src="/src/images/menu4.png" >
-                <div class="mui-media-body">留言反馈</div></a></li>
-            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+                <div class="mui-media-body">留言反馈</div></router-link></li>
+            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><router-link to="/home/vedio">
                 <img src="/src/images/menu5.png" >
-                <div class="mui-media-body">视频专区</div></a></li>
-            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+                <div class="mui-media-body">视频专区</div></router-link></li>
+            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><router-link to="/home/contact">
                 <img src="/src/images/menu6.png" >
-                <div class="mui-media-body">联系我们</div></a></li>
+                <div class="mui-media-body">联系我们</div></router-link></li>
         </ul>
     </div>
 </template>
 <script>
-    import  mui from '../lib/mui/js/mui.js';
+    // import  mui from '../lib/mui/js/mui.js';
     export default {
         data(){
             return{
@@ -91,11 +91,11 @@
             // this.getPic(); //跨域，无法获取
         },
         updated() {
-            mui.init({
-                // 启用滑动
-                swipeBack: true
-            });
-            this.init();
+            // mui.init({
+            //     // 启用滑动
+            //     swipeBack: true
+            // });
+            // this.init();
         },
         mounted(){
             this.init();
@@ -103,12 +103,12 @@
         methods:{
 
             init(){
-
-                var slider = mui("#slider");
-                // 配置定时轮播滑动
-                slider.slider({
-                    interval: 1000
-                });
+                //
+                // var slider = mui("#slider");
+                // // 配置定时轮播滑动
+                // slider.slider({
+                //     interval: 1000
+                // });
 
             },
             getPic(){
@@ -128,6 +128,7 @@
     * {
         touch-action: pan-y;
     }
+
     .swiperbox{
         height: 200px;
         .mt-swipe-item{
