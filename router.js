@@ -8,6 +8,7 @@ import newscontent from "./src/components/newscontent.vue";
 import picContent from "./src/components/picContent.vue";
 import onepic from "./src/components/onepic.vue";
 import product from "./src/components/product.vue";
+import productinfo from "./src/components/productinfo.vue";
 
 var router=new VueRouter({
     routes:[
@@ -20,7 +21,8 @@ var router=new VueRouter({
         {path:'/home/newslist/:id',component:newscontent},
         {path:'/home/picContent',component:picContent},
         {path:'/home/picContent/:id',component:onepic},
-        {path:'/home/product',component:product}
+        {path:'/home/product',component:product},
+        {path:'/home/product/:id',component:productinfo}
     ],
     linkActiveClass:'mui-active'
 })

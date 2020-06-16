@@ -1,6 +1,10 @@
 <template>
     <div class="mainbox">
-        <mt-header fixed title="顶部"></mt-header>
+        <mt-header fixed title="顶部">
+            <span slot="left" @click="back" v-show="flag">
+                <mt-button icon="back">返回</mt-button>
+            </span>
+        </mt-header>
         <transition>
             <router-view></router-view>
         </transition>
@@ -16,7 +20,7 @@
                 <span class="mui-tab-label">会员</span>
             </router-link>
             <router-link class="mui-tab-item-ny" to="/cart">
-                <span class="mui-icon mui-icon-extra mui-icon-extra-cart"><span class="mui-badge">0</span></span>
+                <span class="mui-icon mui-icon-extra mui-icon-extra-cart"><span id="final" class="mui-badge">{{$store.getters.num}}</span></span>
                 <span class="mui-tab-label">购物车</span>
             </router-link>
             <router-link class="mui-tab-item-ny" to="/search">
@@ -27,7 +31,34 @@
     </div>
 
 </template>
-<script></script>
+<script>
+    export default {
+        data(){
+            return{
+                cartnum:0,
+                flag:false
+            }
+
+        },
+        created() {
+           this.flag= this.$route.path=='/home'?false:true;
+        },
+        methods:{
+            back(){
+                this.$router.go(-1);
+            }
+        },
+        watch:{
+            '$route.path': function (newVal,oldVal) {
+                if(newVal=='/home'){
+                    this.flag=false;
+                }else{
+                    this.flag=true;
+                }
+            }
+        }
+    }
+</script>
 <style>
     * {
         touch-action: pan-y;

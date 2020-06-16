@@ -35,6 +35,7 @@
                 margin: 5px;
                 img{
                     width: 100%;
+                    height: 94px;
                     box-shadow: 0 0 8px #999;
                     border-radius: 5px;
                 }

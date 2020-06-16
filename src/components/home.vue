@@ -46,12 +46,7 @@
 <!--                <div class="mui-indicator"></div>-->
 <!--            </div>-->
 <!--        </div>-->
-        <mt-swipe :auto="5000" class="swiperbox">
-            <mt-swipe-item v-for="item in picList" :key="item.id" id="picbox">
-                <img :src="item.img">
-            </mt-swipe-item>
-
-        </mt-swipe>
+        <swiper :picList="picList" :isfull="true"></swiper>
         <ul class="mui-table-view mui-grid-view mui-grid-9">
             <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><router-link to="/home/newslist">
                 <img src="/src/images/menu1.png" >
@@ -76,6 +71,7 @@
 </template>
 <script>
     // import  mui from '../lib/mui/js/mui.js';
+    import swiper from "./subComponents/swiper.vue";
     export default {
         data(){
             return{
@@ -119,6 +115,9 @@
                 })
 
             }
+        },
+        components:{
+            swiper
         }
     }
 
@@ -129,19 +128,6 @@
         touch-action: pan-y;
     }
 
-    .swiperbox{
-        height: 200px;
-        .mt-swipe-item{
-            height: 100%;
-
-
-    }
-        img{
-
-            width: 100%;
-            height: 100%;
-        }
-    }
     .mui-grid-view.mui-grid-9{
         background-color: #fff;
     }
